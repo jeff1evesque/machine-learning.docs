@@ -1,0 +1,111 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Puppetfile &#8212; Machine Learning 0.7 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.7',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="puppetfile">
+<h1>Puppetfile<a class="headerlink" href="#puppetfile" title="Permalink to this headline">¶</a></h1>
+<p>This project implements puppet’s <a class="reference external" href="https://github.com/puppetlabs/r10k"><code class="docutils literal"><span class="pre">r10k</span></code></a> module via vagrant’s <a class="reference external" href="https://github.com/jantman/vagrant-r10k">plugin</a>.
+A requirement of this implementation includes a <code class="docutils literal"><span class="pre">Puppetfile</span></code> (already defined),
+which includes the following syntax:</p>
+<div class="code ruby highlight-default"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env ruby</span>
+<span class="c1">## Install Module: stdlib (apt dependency)</span>
+<span class="n">mod</span> <span class="s1">&#39;stdlib&#39;</span><span class="p">,</span>
+  <span class="p">:</span><span class="n">git</span> <span class="o">=&gt;</span> <span class="s2">&quot;git@github.com:puppetlabs/puppetlabs-stdlib.git&quot;</span><span class="p">,</span>
+  <span class="p">:</span><span class="n">ref</span> <span class="o">=&gt;</span> <span class="s2">&quot;4.6.0&quot;</span>
+
+<span class="c1">## Install Module: apt (from master)</span>
+<span class="n">mod</span> <span class="s1">&#39;apt&#39;</span><span class="p">,</span>
+  <span class="p">:</span><span class="n">git</span> <span class="o">=&gt;</span> <span class="s2">&quot;git@github.com:puppetlabs/puppetlabs-apt.git&quot;</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>Specifically, this implements the ssh syntax <code class="docutils literal"><span class="pre">git&#64;github.com:account/repo.git</span></code>,
+unlike the following alternatives:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">https://github.com/account/repo.git</span></code></li>
+<li><code class="docutils literal"><span class="pre">git://github.com/account/repo.git</span></code></li>
+</ul>
+<p>This allows r10k to clone the corresponding puppet module(s), without a deterrence
+of <a class="reference external" href="https://en.wikipedia.org/wiki/Denial-of-service_attack"><code class="docutils literal"><span class="pre">DDoS</span></code></a>. However, to implement the above syntax, ssh keys need to be generated,
+and properly assigned locally, as well as on the github account.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Jeff Levesque.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.7</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../../_sources/docs/background/puppetfile.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
