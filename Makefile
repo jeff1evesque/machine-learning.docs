@@ -6,7 +6,7 @@ SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
 SPHINXPROJ    = MachineLearning
 SOURCEDIR     = source
-BUILDDIR      = 0.7
+BUILDDIR      = .
 
 # Put it first so that "make" without argument is like "make help".
 help:

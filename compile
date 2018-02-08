@@ -1,0 +1,19 @@
+#!/bin/bash
+
+DOC_VERSION="$1"
+CWD="$2"
+PWD=$(pwd)
+
+cd "$CWD"
+sudo apt-get update
+sudo apt-get -y install python-pip
+sudo pip install sphinx
+sudo apt-get -y install subversion
+sudo svn export https://github.com/jeff1evesque/machine-learning/trunk/doc source/html
+make html
+mv -f html build
+rm -f build/index.html
+cp -rf build/html/* build
+cp -rf build "$DOC_VERSION"
+rm -rf build "$DOC_VERSION"/html source/html doctrees
+cd "$PWD"
