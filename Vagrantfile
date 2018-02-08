@@ -3,23 +3,6 @@
 
 ## build vagrant instances
 Vagrant.configure(2) do |config|
-    ## globally configure plugins
-    required_plugins = %w(vagrant-r10k vagrant-triggers)
-    plugin_installed = false
-
-    ## Install Vagrant Plugins
-    required_plugins.each do |plugin|
-        unless Vagrant.has_plugin? plugin
-            system "vagrant plugin install #{plugin}"
-            plugin_installed = true
-        end
-    end
-
-    ## Restart Vagrant: if new plugin installed
-    if plugin_installed == true
-        exec "vagrant #{ARGV.join(' ')}"
-    end
-
     ## general application
     config.vm.define 'main' do |main|
         ## local variables
@@ -32,14 +15,8 @@ Vagrant.configure(2) do |config|
         cwd               = '/vagrant'
 
         ## increase RAM to ensure scrypt doesn't exhaust memory
-        main.vm.provider 'virtualbox' do |v|
-            v.customize ['modifyvm', :id, '--memory', '64']
-        end
-
-        ## ensure source directory exists
-        main.trigger.before :up do
-            run "cd #{cwd}"
-            run "./compile #{document_version} #{cwd}"
+        main.vm.provider 'shell' do |v|
+            v.vm.provision 'shell', path: 'compile.sh'
         end
 
         main.vm.box                        = "#{atlas_repo}/#{atlas_box}"
