@@ -1,0 +1,16 @@
+#!/bin/bash
+
+DOC_VERSION="$1"
+CWD="$2"
+PWD=$(pwd)
+
+cd "$CWD"
+sudo apt-get install -y python-sphinx
+sudo apt-get install -y subversion
+make -p "$DOC_VERSION"
+mv "$DOC_VERSION" html
+sudo svn export https://github.com/jeff1evesque/machine-learning/trunk/doc source
+make html
+mv html "$DOC_VERSION"
+rm -rf source
+cd "$PWD"
