@@ -5,8 +5,9 @@ CWD="$2"
 PWD=$(pwd)
 
 cd "$CWD"
-sudo apt-get install -y python-sphinx
-sudo apt-get install -y subversion
+sudo apt-get -y install python-pip
+sudo pip install sphinx
+sudo apt-get -y install subversion
 make -p "$DOC_VERSION"
 mv "$DOC_VERSION" html
 sudo svn export https://github.com/jeff1evesque/machine-learning/trunk/doc source
