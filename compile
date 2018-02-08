@@ -25,7 +25,7 @@ rm -rf build source/html doctrees
 
 if [ "$CWD" != 'vagrant' ]
 then
-    ln -s 0.7 latest
+    ln -s "DOC_VERSION" latest
 fi
 
 cd "$PWD"
