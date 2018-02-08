@@ -15,8 +15,9 @@ Vagrant.configure(2) do |config|
         cwd               = '/vagrant'
 
         ## increase RAM to ensure scrypt doesn't exhaust memory
-        main.vm.provider 'shell' do |v|
-            v.vm.provision 'shell', path: 'compile.sh'
+        main.vm.provision 'shell' do |shell|
+            shell.path = 'compile'
+            shell.args = [document_version, cwd]
         end
 
         main.vm.box                        = "#{atlas_repo}/#{atlas_box}"
