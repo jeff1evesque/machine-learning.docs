@@ -11,8 +11,7 @@ sudo pip install sphinx
 sudo apt-get -y install subversion
 mkdir -p "$DOC_VERSION"
 mv "$DOC_VERSION" html
-sudo svn export https://github.com/jeff1evesque/machine-learning/trunk/doc source
+sudo svn export https://github.com/jeff1evesque/machine-learning/trunk/doc html
 make html
 mv html "$DOC_VERSION"
-rm -rf source
 cd "$PWD"
