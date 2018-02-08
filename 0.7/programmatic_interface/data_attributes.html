@@ -1,0 +1,120 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Data Attributes &#8212; Machine Learning 0.7 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.7',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="data-attributes">
+<h1>Data Attributes<a class="headerlink" href="#data-attributes" title="Permalink to this headline">¶</a></h1>
+<p>The programmatic-api, is intended to provide many of the functionalities, offered by the
+web-interface. This is done by encoding equivalent attributes, into a json string, and
+sent to its respective url endpoint, as an encapsulated <code class="docutils literal"><span class="pre">POST</span></code> request. Below, the
+corresponding endpoints are briefly explained, and carefully linked, to further examples
+of its implementation.</p>
+<div class="section" id="main-session">
+<h2>Main Session<a class="headerlink" href="#main-session" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">/load-data</span></code>: interfaces the following main sessions:<ul>
+<li><a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/doc/programmatic_interface/data/data_new.rst"><code class="docutils literal"><span class="pre">data_new</span></code></a>: store dataset(s) into the applications database</li>
+<li><a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/doc/programmatic_interface/data/data_append.rst"><code class="docutils literal"><span class="pre">data_append</span></code></a>: append additional dataset(s), into an existing dataset entry in the database</li>
+<li><a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/doc/programmatic_interface/model/model_generate.rst"><code class="docutils literal"><span class="pre">model_generate</span></code></a>: generate a model, using an existing dataset entry from the database</li>
+<li><a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/doc/programmatic_interface/predict/model_predict.rst"><code class="docutils literal"><span class="pre">model_predict</span></code></a>: generate a prediction, using an existing generated model</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="result-arbiter">
+<h2>Result Arbiter<a class="headerlink" href="#result-arbiter" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/doc/programmatic_interface/result/save_prediction.rst"><code class="docutils literal"><span class="pre">/save-prediction</span></code></a>: store a generated prediction, from a <code class="docutils literal"><span class="pre">model_predict</span></code> session.</li>
+<li><a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/doc/programmatic_interface/result/retrieve_prediction.rst"><code class="docutils literal"><span class="pre">/retrieve-prediction</span></code></a>: retrieves the following saved prediction attributes:<ul>
+<li>result: pertains to all <code class="docutils literal"><span class="pre">model_type</span></code></li>
+<li>classes: pertains only to the svm <code class="docutils literal"><span class="pre">model_type</span></code></li>
+<li>decision function: pertains only to the svm <code class="docutils literal"><span class="pre">model_type</span></code></li>
+<li>probabilities: pertains only to the svm <code class="docutils literal"><span class="pre">model_type</span></code></li>
+<li>coefficient of determination: pertains only to the svr <code class="docutils literal"><span class="pre">model_type</span></code></li>
+</ul>
+</li>
+<li><a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/doc/programmatic_interface/result/retrieve_prediction_titles.rst"><code class="docutils literal"><span class="pre">/retrieve-prediction-titles</span></code></a>: retrieves predictions saved titles, for either a specified
+<code class="docutils literal"><span class="pre">model_type</span></code>, otherwise return all saved titles, for all <code class="docutils literal"><span class="pre">model_type</span></code>.</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Jeff Levesque.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.7</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../../_sources/html/programmatic_interface/data_attributes.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
