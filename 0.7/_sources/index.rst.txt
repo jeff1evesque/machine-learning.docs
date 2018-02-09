@@ -11,6 +11,11 @@ Machine Learning
    :caption: Contents:
 
 
+This site serves documentation to the web-interface, and programmatic rest api application.
+The source code, can be found on the complementary github `repository <https://github.com/jeff1evesque/machine-learning>`_.
+
+
+
 
 Indices and tables
 ==================
