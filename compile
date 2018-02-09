@@ -4,13 +4,17 @@ DOC_VERSION="$1"
 CWD="$2"
 PWD=$(pwd)
 
-cd "$CWD"
+if [ "$CWD" ]
+then
+    cd "$CWD"
+fi
+
 sudo apt-get update
 sudo apt-get -y install python-pip
 sudo pip install sphinx
 sudo pip install sphinx_rtd_theme
 sudo apt-get -y install subversion
-sudo svn export https://github.com/jeff1evesque/machine-learning/trunk/doc source
+sudo svn export https://github.com/jeff1evesque/machine-learning/trunk/doc source/html
 
 if [ "$CWD" != 'vagrant' ]
 then
