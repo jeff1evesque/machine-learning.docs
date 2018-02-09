@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Machine Learning's documentation!
-============================================
+Machine Learning
+================
 
 .. toctree::
    :maxdepth: 2
@@ -15,5 +15,16 @@ Welcome to Machine Learning's documentation!
 Indices and tables
 ==================
 
-* :ref:`genindex`
-* :ref:`search`
+* :ref:`html/index`
+* :ref:`html/configuration/setup_clone`
+* :ref:`html/configuration/ssh_keys`
+* :ref:`html/programmatic_interface/data_attributes`
+* :ref:`html/programmatic_interface/authentication/login`
+* :ref:`html/programmatic_interface/data/data_new`
+* :ref:`html/programmatic_interface/data/data_append`
+* :ref:`html/programmatic_interface/model/model_generate`
+* :ref:`html/programmatic_interface/predict/model_predict`
+* :ref:`html/programmatic_interface/result/retrieve_prediction`
+* :ref:`html/programmatic_interface/result/retrieve_prediction_titles`
+* :ref:`html/test/lint`
+* :ref:`html/test/pytest`
