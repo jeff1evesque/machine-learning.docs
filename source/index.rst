@@ -11,9 +11,16 @@ Machine Learning
    :caption: Contents:
 
 
-This site serves documentation to the web-interface, and programmatic rest api application.
-The source code, can be found on the complementary github `repository <https://github.com/jeff1evesque/machine-learning>`_.
+This site serves as documentation to the programmatic rest-api, as well as the web-interface
+for various machine-learning algorithms. Currently there are two algorithms supported:
 
+- Support Vector Machine (SVM)
+- Support Vector Regression (SVR)
+
+Both these options, support various kernel implementations. Additionally, the corresponding
+`source code <https://github.com/jeff1evesque/machine-learning>`_, can be further reviewed.
+Other algorithms, as well as web UX/UI will be improved with time. However, pull requests,
+and related feature requests are welcome.
 
 
 
