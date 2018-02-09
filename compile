@@ -18,7 +18,7 @@ then
 fi
 
 rm -rf "$DOC_VERSION"
-mkdir source/_static
+mkdir -p source/_static
 make html
 mv -f html build
 cp -rf build "$DOC_VERSION"
