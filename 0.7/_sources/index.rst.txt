@@ -28,15 +28,15 @@ Indices and tables
 ==================
 
 * :doc:`html/index`
-* :doc:`html/configuration/setup_clone`
-* :doc:`html/configuration/ssh_keys`
-* :doc:`html/programmatic_interface/data_attributes`
-* :doc:`html/programmatic_interface/authentication/login`
-* :doc:`html/programmatic_interface/data/data_new`
-* :doc:`html/programmatic_interface/data/data_append`
-* :doc:`html/programmatic_interface/model/model_generate`
-* :doc:`html/programmatic_interface/predict/model_predict`
-* :doc:`html/programmatic_interface/result/retrieve_prediction`
-* :doc:`html/programmatic_interface/result/retrieve_prediction_titles`
+* :doc:`html/configuration/setup-clone`
+* :doc:`html/configuration/ssh-keys`
+* :doc:`html/programmatic-interface/data-attributes`
+* :doc:`html/programmatic-interface/authentication/login`
+* :doc:`html/programmatic-interface/data/data-new`
+* :doc:`html/programmatic-interface/data/data-append`
+* :doc:`html/programmatic-interface/model/model-generate`
+* :doc:`html/programmatic-interface/predict/model-predict`
+* :doc:`html/programmatic-interface/result/retrieve-prediction`
+* :doc:`html/programmatic-interface/result/retrieve-prediction-titles`
 * :doc:`html/test/lint`
 * :doc:`html/test/pytest`

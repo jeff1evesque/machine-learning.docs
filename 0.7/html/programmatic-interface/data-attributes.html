@@ -169,10 +169,10 @@ of its implementation.</p>
 <h2>Main Session<a class="headerlink" href="#main-session" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">/load-data</span></code>: interfaces the following main sessions:<ul>
-<li><a class="reference external" href="/latest/html/programmatic-interface/data/data-new"><code class="docutils literal"><span class="pre">data_new</span></code></a>: store dataset(s) into the applications database</li>
-<li><a class="reference external" href="/latest/html/programmatic-interface/data/data-append"><code class="docutils literal"><span class="pre">data_append</span></code></a>: append additional dataset(s), into an existing dataset entry in the database</li>
-<li><a class="reference external" href="/latest/html/programmatic-interface/model/model-generate"><code class="docutils literal"><span class="pre">model_generate</span></code></a>: generate a model, using an existing dataset entry from the database</li>
-<li><a class="reference external" href="/latest/html/programmatic-interface/predict/model-predict.rst"><code class="docutils literal"><span class="pre">model_predict</span></code></a>: generate a prediction, using an existing generated model</li>
+<li><a class="reference external" href="data/data-new"><code class="docutils literal"><span class="pre">data_new</span></code></a>: store dataset(s) into the applications database</li>
+<li><a class="reference external" href="data/data-append"><code class="docutils literal"><span class="pre">data_append</span></code></a>: append additional dataset(s), into an existing dataset entry in the database</li>
+<li><a class="reference external" href="model/model-generate"><code class="docutils literal"><span class="pre">model_generate</span></code></a>: generate a model, using an existing dataset entry from the database</li>
+<li><a class="reference external" href="predict/model-predict.rst"><code class="docutils literal"><span class="pre">model_predict</span></code></a>: generate a prediction, using an existing generated model</li>
 </ul>
 </li>
 </ul>
@@ -180,8 +180,8 @@ of its implementation.</p>
 <div class="section" id="result-arbiter">
 <h2>Result Arbiter<a class="headerlink" href="#result-arbiter" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="/latest/html/programmatic-interface/result/save-prediction"><code class="docutils literal"><span class="pre">/save-prediction</span></code></a>: store a generated prediction, from a <code class="docutils literal"><span class="pre">model_predict</span></code> session.</li>
-<li><a class="reference external" href="/latest/html/programmatic-interface/result/retrieve-prediction"><code class="docutils literal"><span class="pre">/retrieve-prediction</span></code></a>: retrieves the following saved prediction attributes:<ul>
+<li><a class="reference external" href="result/save-prediction"><code class="docutils literal"><span class="pre">/save-prediction</span></code></a>: store a generated prediction, from a <code class="docutils literal"><span class="pre">model_predict</span></code> session.</li>
+<li><a class="reference external" href="result/retrieve-prediction"><code class="docutils literal"><span class="pre">/retrieve-prediction</span></code></a>: retrieves the following saved prediction attributes:<ul>
 <li>result: pertains to all <code class="docutils literal"><span class="pre">model_type</span></code></li>
 <li>classes: pertains only to the svm <code class="docutils literal"><span class="pre">model_type</span></code></li>
 <li>decision function: pertains only to the svm <code class="docutils literal"><span class="pre">model_type</span></code></li>
@@ -189,7 +189,7 @@ of its implementation.</p>
 <li>coefficient of determination: pertains only to the svr <code class="docutils literal"><span class="pre">model_type</span></code></li>
 </ul>
 </li>
-<li><a class="reference external" href="/latest/html/programmatic-interface/result/retrieve-prediction-titles"><code class="docutils literal"><span class="pre">/retrieve-prediction-titles</span></code></a>: retrieves predictions saved titles, for either a specified
+<li><a class="reference external" href="result/retrieve-prediction-titles"><code class="docutils literal"><span class="pre">/retrieve-prediction-titles</span></code></a>: retrieves predictions saved titles, for either a specified
 <code class="docutils literal"><span class="pre">model_type</span></code>, otherwise return all saved titles, for all <code class="docutils literal"><span class="pre">model_type</span></code>.</li>
 </ul>
 </div>
