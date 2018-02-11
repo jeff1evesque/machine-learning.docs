@@ -19,15 +19,15 @@ for various machine-learning algorithms. Currently there are two algorithms supp
 
 Both these options, support various kernel implementations. Additionally, the corresponding
 `source code <https://github.com/jeff1evesque/machine-learning>`_, can be further reviewed.
-Other algorithms, as well as web UX/UI will be improved with time. However, pull requests,
-and related feature requests are welcome.
+Other algorithms, as well as web the UX/UI will be improved with time. However, pull requests,
+and related feature `requests <https://github.com/jeff1evesque/machine-learning/issues/new>`_
+are welcome.
 
 
 
 Indices and tables
 ==================
 
-* :doc:`html/index`
 * :doc:`html/configuration/setup-clone`
 * :doc:`html/configuration/ssh-keys`
 * :doc:`html/programmatic-interface/data-attributes`
