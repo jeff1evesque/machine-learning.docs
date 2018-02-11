@@ -19,7 +19,7 @@ for various machine-learning algorithms. Currently there are two algorithms supp
 
 Both these options, support various kernel implementations. Additionally, the corresponding
 `source code <https://github.com/jeff1evesque/machine-learning>`_, can be further reviewed.
-Other algorithms, as well as the UX/UI will be improved with time. However, `pull requests <https://github.com/jeff1evesque/machine-learning/compare>`_,
+Other algorithms, as well as the UI/UX will be improved with time. However, `pull requests <https://github.com/jeff1evesque/machine-learning/compare>`_,
 and related feature `requests <https://github.com/jeff1evesque/machine-learning/issues/new>`_
 are welcome.
 
