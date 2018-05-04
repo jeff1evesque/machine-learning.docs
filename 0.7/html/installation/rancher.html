@@ -156,67 +156,242 @@ where users can properly manage respective services of this application. However
 proceeding, it is important to follow the docker <a class="reference external" href="docker">installation</a> guide, for the corresponding
 host machine.</p>
 <p>Once the docker has been installed, execute the following from the docker quickstart terminal,
-to install [rancher](<a class="reference external" href="https://rancher.com/">https://rancher.com/</a>):</p>
-<p><a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">`</span></a>bash</p>
-<blockquote>
-<div><blockquote>
-<div><blockquote>
-<div><blockquote>
-<div><blockquote>
-<div>##         .</div></blockquote>
-<p>## ## ##        ==</p>
-</div></blockquote>
-<p>## ## ## ## ##    ===</p>
-</div></blockquote>
-<p>/”“”“”“”“”“”“”“”“”___/ ===</p>
-</div></blockquote>
-<dl class="docutils">
-<dt>~~~ {~~ ~~~~ ~~~ ~~~~ ~~~ ~ /  ===- ~~~</dt>
-<dd><dl class="first last docutils">
-<dt>______ o           __/</dt>
-<dd><dl class="first last docutils">
-<dt>           __/</dt>
-<dd>___________/</dd>
-</dl>
-</dd>
-</dl>
-</dd>
-</dl>
-</div></blockquote>
-<p>docker is configured to use the default machine with IP 192.168.99.100
-For help getting started, check out the docs at <a class="reference external" href="https://docs.docker.com">https://docs.docker.com</a></p>
-<p>Start interactive shell</p>
-<p><a class="reference external" href="mailto:jeff1evesque&#37;&#52;&#48;XXXXXXX">jeff1evesque<span>&#64;</span>XXXXXXX</a> YYYYYZZ ~
-$ cd /path/to/machine-learning</p>
-<p><a class="reference external" href="mailto:jeff1evesque&#37;&#52;&#48;XXXXXXX">jeff1evesque<span>&#64;</span>XXXXXXX</a> YYYYYZZ /path/to/machine-learning (feature-2935)
-$ ./install_rancher
-Unable to find image ‘rancher/server:latest’ locally
-latest: Pulling from rancher/server
-bae382666908: Pull complete
-29ede3c02ff2: Pull complete
-da4e69f33106: Pull complete
-8d43e5f5d27f: Pull complete
-b0de1abb17d6: Pull complete
-422f47db4517: Pull complete
-79d37de643ce: Pull complete
-69d13e08a4fe: Pull complete
-2ddfd3c6a2b7: Pull complete
-bc433fed3823: Pull complete
-b82e188df556: Pull complete
-dae2802428a4: Pull complete
-a6247572ea3c: Pull complete
-884c916ebae4: Pull complete
-85517c9c5365: Pull complete
-02dded9fe690: Pull complete
-fd9f433c3bc6: Pull complete
-44d91b3fea45: Pull complete
-0d463387dfeb: Pull complete
-60753c4d26f0: Pull complete
-a003892966fe: Pull complete
-Digest: sha256:42441f0128fae4d72d51f92de2049392427d462356282a46f28434332967c7e4
-Status: Downloaded newer image for rancher/server:latest
-57e7f8577c7a80d8ea10d1b0855de619c4ec9ad0318172b1f52e70006b99afa6
-<a href="#id5"><span class="problematic" id="id6">``</span></a><a href="#id7"><span class="problematic" id="id8">`</span></a></p>
+to install <a class="reference external" href="http://rancher.com">rancher</a>:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>                        <span class="c1">##         .</span>
+                  <span class="c1">## ## ##        ==</span>
+               <span class="c1">## ## ## ## ##    ===</span>
+           <span class="o">/</span><span class="s2">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;\___/ ===</span>
+<span class="s2">      ~~~ {~~ ~~~~ ~~~ ~~~~ ~~~ ~ /  ===- ~~~</span>
+<span class="s2">           \______ o           __/</span>
+<span class="s2">             \    \         __/</span>
+<span class="s2">              \____\_______/</span>
+
+<span class="s2">docker is configured to use the default machine with IP 192.168.99.100</span>
+<span class="s2">For help getting started, check out the docs at https://docs.docker.com</span>
+
+<span class="s2">Start interactive shell</span>
+
+<span class="s2">jeff1evesque@XXXXXXX YYYYYZZ ~</span>
+<span class="s2">$ cd /path/to/machine-learning</span>
+
+<span class="s2">jeff1evesque@XXXXXXX YYYYYZZ /path/to/machine-learning (feature-2935)</span>
+<span class="s2">$ ./install_rancher</span>
+<span class="s2">  % Total    % Received </span><span class="si">% X</span><span class="s2">ferd  Average Speed   Time    Time     Time  Current</span>
+<span class="s2">                                 Dload  Upload   Total   Spent    Left  Speed</span>
+<span class="s2">100   622    0   622    0     0   1993      0 --:--:-- --:--:-- --:--:--  2101</span>
+<span class="s2">100 3529k  100 3529k    0     0  4434k      0 --:--:-- --:--:-- --:--:-- 4434k</span>
+<span class="s2">Archive:  rancher-windows-amd64-v0.6.9.zip</span>
+<span class="s2">  inflating: rancher.exe</span>
+
+<span class="s2">Windows docker implementation, requires DockerToolbox, which</span>
+<span class="s2">creates a &#39;default&#39; container to manage docker. To proceed,</span>
+<span class="s2">rancher configurations will reflect port &#39;8080&#39;.</span>
+
+<span class="s2">21b607e019afd0400ed5e01b63b02b36d0be95e12c26abaf815e332c09f6fd63</span>
+<span class="s2">Note: Unnecessary use of -X or --request, POST is already inferred.</span>
+<span class="s2">* timeout on name lookup is not supported</span>
+<span class="s2">*   Trying 192.168.99.100...</span>
+<span class="s2">  % Total    % Received </span><span class="si">% X</span><span class="s2">ferd  Average Speed   Time    Time     Time  Current</span>
+<span class="s2">                                 Dload  Upload   Total   Spent    Left  Speed</span>
+<span class="s2">  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*</span>
+<span class="s2">connect to 192.168.99.100 port 8080 failed: Connection refused</span>
+<span class="s2">* Failed to connect to 192.168.99.100 port 8080: Connection refused</span>
+<span class="s2">* Closing connection 0</span>
+<span class="s2">curl: (7) Failed to connect to 192.168.99.100 port 8080: Connection refused</span>
+
+<span class="s2">Rancher server has not started. Attempting to obtain</span>
+<span class="s2">access + secret key, from rancher in 30s.</span>
+
+<span class="s2">Note: Unnecessary use of -X or --request, POST is already inferred.</span>
+<span class="s2">* timeout on name lookup is not supported</span>
+<span class="s2">*   Trying 192.168.99.100...</span>
+<span class="s2">  % Total    % Received </span><span class="si">% X</span><span class="s2">ferd  Average Speed   Time    Time     Time  Current</span>
+<span class="s2">                                 Dload  Upload   Total   Spent    Left  Speed</span>
+<span class="s2">  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*</span>
+<span class="s2">connect to 192.168.99.100 port 8080 failed: Connection refused</span>
+<span class="s2">* Failed to connect to 192.168.99.100 port 8080: Connection refused</span>
+<span class="s2">* Closing connection 0</span>
+<span class="s2">curl: (7) Failed to connect to 192.168.99.100 port 8080: Connection refused</span>
+
+<span class="s2">Rancher server has not started. Attempting to obtain</span>
+<span class="s2">access + secret key, from rancher in 30s.</span>
+
+<span class="s2">Note: Unnecessary use of -X or --request, POST is already inferred.</span>
+<span class="s2">* timeout on name lookup is not supported</span>
+<span class="s2">*   Trying 192.168.99.100...</span>
+<span class="s2">  % Total    % Received </span><span class="si">% X</span><span class="s2">ferd  Average Speed   Time    Time     Time  Current</span>
+<span class="s2">                                 Dload  Upload   Total   Spent    Left  Speed</span>
+<span class="s2">  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*</span>
+<span class="s2">connect to 192.168.99.100 port 8080 failed: Connection refused</span>
+<span class="s2">* Failed to connect to 192.168.99.100 port 8080: Connection refused</span>
+<span class="s2">* Closing connection 0</span>
+<span class="s2">curl: (7) Failed to connect to 192.168.99.100 port 8080: Connection refused</span>
+
+<span class="s2">Rancher server has not started. Attempting to obtain</span>
+<span class="s2">access + secret key, from rancher in 30s.</span>
+
+<span class="s2">Note: Unnecessary use of -X or --request, POST is already inferred.</span>
+<span class="s2">* timeout on name lookup is not supported</span>
+<span class="s2">*   Trying 192.168.99.100...</span>
+<span class="s2">  % Total    % Received </span><span class="si">% X</span><span class="s2">ferd  Average Speed   Time    Time     Time  Current</span>
+<span class="s2">                                 Dload  Upload   Total   Spent    Left  Speed</span>
+<span class="s2">  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*</span>
+<span class="s2">Connected to 192.168.99.100 (192.168.99.100) port 8080 (#0)</span>
+<span class="s2">&gt; POST /v2-beta/apikeys HTTP/1.1</span>
+<span class="s2">&gt; Host: 192.168.99.100:8080</span>
+<span class="s2">&gt; User-Agent: curl/7.49.1</span>
+<span class="s2">&gt; Accept: application/json</span>
+<span class="s2">&gt; Content-Type: application/json</span>
+<span class="s2">&gt; Content-Length: 272</span>
+<span class="s2">&gt;</span>
+<span class="s2">} [272 bytes data]</span>
+<span class="s2">* upload completely sent off: 272 out of 272 bytes</span>
+<span class="s2">100   272    0     0  100   272      0    226  0:00:01  0:00:01 --:--:--   226&lt;</span>
+<span class="s2">HTTP/1.1 201 Created</span>
+<span class="s2">&lt; Content-Type: application/json; charset=utf-8</span>
+<span class="s2">&lt; Date: Tue, 01 May 2018 21:46:34 GMT</span>
+<span class="s2">&lt; Expires: Thu, 01 Jan 1970 00:00:00 GMT</span>
+<span class="s2">&lt; Server: Jetty(9.2.11.v20150529)</span>
+<span class="s2">&lt; Set-Cookie: PL=rancher;Path=/</span>
+<span class="s2">&lt; X-Api-Account-Id: 1a1</span>
+<span class="s2">&lt; X-Api-Client-Ip: 192.168.99.1</span>
+<span class="s2">&lt; X-Api-Schemas: http://192.168.99.100:8080/v2-beta/schemas</span>
+<span class="s2">&lt; X-Api-User-Id: 1a1</span>
+<span class="s2">&lt; X-Rancher-Version: v1.6.17</span>
+<span class="s2">&lt; Content-Length: 1106</span>
+<span class="s2">&lt;</span>
+<span class="s2">{ [1106 bytes data]</span>
+<span class="s2">100  1378  100  1106  100   272    492    121  0:00:02  0:00:02 --:--:--   492</span>
+<span class="s2">* Connection #0 to host 192.168.99.100 left intact</span>
+<span class="s2">* timeout on name lookup is not supported</span>
+<span class="s2">*   Trying 192.168.99.100...</span>
+<span class="s2">* Connected to 192.168.99.100 (192.168.99.100) port 8080 (#0)</span>
+<span class="s2">&gt; POST /v2-beta/projects/1a5/registrationTokens HTTP/1.1</span>
+<span class="s2">&gt; Host: 192.168.99.100:8080</span>
+<span class="s2">&gt; User-Agent: curl/7.49.1</span>
+<span class="s2">&gt; Accept: application/json</span>
+<span class="s2">&gt; Content-Type: application/json</span>
+<span class="s2">&gt;</span>
+<span class="s2">&lt; HTTP/1.1 201 Created</span>
+<span class="s2">&lt; Content-Type: application/json; charset=utf-8</span>
+<span class="s2">&lt; Date: Tue, 01 May 2018 21:46:35 GMT</span>
+<span class="s2">&lt; Expires: Thu, 01 Jan 1970 00:00:00 GMT</span>
+<span class="s2">&lt; Server: Jetty(9.2.11.v20150529)</span>
+<span class="s2">&lt; Set-Cookie: PL=rancher;Path=/</span>
+<span class="s2">&lt; X-Api-Account-Id: 1a5</span>
+<span class="s2">&lt; X-Api-Client-Ip: 192.168.99.1</span>
+<span class="s2">&lt; X-Api-Schemas: http://192.168.99.100:8080/v2-beta/projects/1a5/schemas</span>
+<span class="s2">&lt; X-Api-User-Id: 1a1</span>
+<span class="s2">&lt; X-Rancher-Version: v1.6.17</span>
+<span class="s2">&lt; Content-Length: 1168</span>
+<span class="s2">&lt;</span>
+<span class="s2">{&quot;id&quot;:&quot;1c3&quot;,&quot;type&quot;:&quot;registrationToken&quot;,&quot;links&quot;:{&quot;self&quot;:&quot;http:\/\/192.168.99.100:</span>
+<span class="s2">8080\/v2-beta\/projects\/1a5\/registrationtokens\/1c3&quot;,&quot;account&quot;:&quot;http:\/\/192.1</span>
+<span class="s2">68.99.100:8080\/v2-beta\/projects\/1a5\/registrationtokens\/1c3\/account&quot;,&quot;image</span>
+<span class="s2">s&quot;:&quot;http:\/\/192.168.99.100:8080\/v2-beta\/projects\/1a5\/registrationtokens\/1c</span>
+<span class="s2">3\/images&quot;,&quot;instances&quot;:&quot;http:\/\/192.168.99.100:8080\/v2-beta\/projects\/1a5\/re</span>
+<span class="s2">gistrationtokens\/1c3\/instances&quot;},&quot;actions&quot;:{&quot;activate&quot;:&quot;http:\/\/192.168.99.10</span>
+<span class="s2">0:8080\/v2-beta\/projects\/1a5\/registrationtokens\/1c3\/?action=activate&quot;,&quot;remo</span>
+<span class="s2">ve&quot;:&quot;http:\/\/192.168.99.100:8080\/v2-beta\/projects\/1a5\/registrationtokens\/1</span>
+<span class="s2">c3\/?action=remove&quot;,&quot;deactivate&quot;:&quot;http:\/\/192.168.99.100:8080\/v2-beta\/project</span>
+<span class="s2">s\/1a5\/registrationtokens\/1c3\/?action=deactivate&quot;},&quot;baseType&quot;:&quot;credential&quot;,&quot;n</span>
+<span class="s2">ame&quot;:null,&quot;state&quot;:&quot;registering&quot;,&quot;accountId&quot;:&quot;1a5&quot;,&quot;command&quot;:null,&quot;created&quot;:&quot;2018</span>
+<span class="s2">-05-01T21:46:35Z&quot;,&quot;createdTS&quot;:1525211195000,&quot;description&quot;:null,&quot;image&quot;:null,&quot;kin</span>
+<span class="s2">d&quot;:&quot;registrationToken&quot;,&quot;registrationUrl&quot;:null,&quot;removed&quot;:null,&quot;token&quot;:null,&quot;trans</span>
+<span class="s2">itioning&quot;:&quot;yes&quot;,&quot;transitioningMessage&quot;:&quot;In Progress&quot;,&quot;transitioningProgress&quot;:nul</span>
+<span class="s2">l,&quot;uuid&quot;:&quot;1c02f09d-f008-4895-8e67-bf6a550e695d&quot;}* Connection #0 to host 192.168.</span>
+<span class="s2">99.100 left intact</span>
+<span class="s2">* timeout on name lookup is not supported</span>
+<span class="s2">*   Trying 192.168.99.100...</span>
+<span class="s2">  % Total    % Received </span><span class="si">% X</span><span class="s2">ferd  Average Speed   Time    Time     Time  Current</span>
+<span class="s2">                                 Dload  Upload   Total   Spent    Left  Speed</span>
+<span class="s2">  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*</span>
+<span class="s2">Connected to 192.168.99.100 (192.168.99.100) port 8080 (#0)</span>
+<span class="s2">&gt; GET /v2-beta/projects/1a5/registrationTokens HTTP/1.1</span>
+<span class="s2">&gt; Host: 192.168.99.100:8080</span>
+<span class="s2">&gt; User-Agent: curl/7.49.1</span>
+<span class="s2">&gt; Accept: application/json</span>
+<span class="s2">&gt; Content-Type: application/json</span>
+<span class="s2">&gt;</span>
+<span class="s2">&lt; HTTP/1.1 200 OK</span>
+<span class="s2">&lt; Content-Type: application/json; charset=utf-8</span>
+<span class="s2">&lt; Date: Tue, 01 May 2018 21:46:35 GMT</span>
+<span class="s2">&lt; Expires: Thu, 01 Jan 1970 00:00:00 GMT</span>
+<span class="s2">&lt; Server: Jetty(9.2.11.v20150529)</span>
+<span class="s2">&lt; Set-Cookie: PL=rancher;Path=/</span>
+<span class="s2">&lt; Vary: Accept-Encoding, User-Agent</span>
+<span class="s2">&lt; X-Api-Account-Id: 1a5</span>
+<span class="s2">&lt; X-Api-Client-Ip: 192.168.99.1</span>
+<span class="s2">&lt; X-Api-Schemas: http://192.168.99.100:8080/v2-beta/projects/1a5/schemas</span>
+<span class="s2">&lt; X-Api-User-Id: 1a1</span>
+<span class="s2">&lt; X-Rancher-Version: v1.6.17</span>
+<span class="s2">&lt; Transfer-Encoding: chunked</span>
+<span class="s2">&lt;</span>
+<span class="s2">{ [2476 bytes data]</span>
+<span class="s2">100  3526    0  3526    0     0  14160      0 --:--:-- --:--:-- --:--:-- 14160</span>
+<span class="s2">* Connection #0 to host 192.168.99.100 left intact</span>
+<span class="s2">* timeout on name lookup is not supported</span>
+<span class="s2">*   Trying 192.168.99.100...</span>
+<span class="s2">  % Total    % Received </span><span class="si">% X</span><span class="s2">ferd  Average Speed   Time    Time     Time  Current</span>
+<span class="s2">                                 Dload  Upload   Total   Spent    Left  Speed</span>
+<span class="s2">  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*</span>
+<span class="s2">Connected to 192.168.99.100 (192.168.99.100) port 8080 (#0)</span>
+<span class="s2">&gt; GET /v2-beta/projects/1a5/registrationTokens HTTP/1.1</span>
+<span class="s2">&gt; Host: 192.168.99.100:8080</span>
+<span class="s2">&gt; User-Agent: curl/7.49.1</span>
+<span class="s2">&gt; Accept: application/json</span>
+<span class="s2">&gt; Content-Type: application/json</span>
+<span class="s2">&gt;</span>
+<span class="s2">&lt; HTTP/1.1 200 OK</span>
+<span class="s2">&lt; Content-Type: application/json; charset=utf-8</span>
+<span class="s2">&lt; Date: Tue, 01 May 2018 21:46:37 GMT</span>
+<span class="s2">&lt; Expires: Thu, 01 Jan 1970 00:00:00 GMT</span>
+<span class="s2">&lt; Server: Jetty(9.2.11.v20150529)</span>
+<span class="s2">&lt; Set-Cookie: PL=rancher;Path=/</span>
+<span class="s2">&lt; Vary: Accept-Encoding, User-Agent</span>
+<span class="s2">&lt; X-Api-Account-Id: 1a5</span>
+<span class="s2">&lt; X-Api-Client-Ip: 192.168.99.1</span>
+<span class="s2">&lt; X-Api-Schemas: http://192.168.99.100:8080/v2-beta/projects/1a5/schemas</span>
+<span class="s2">&lt; X-Api-User-Id: 1a1</span>
+<span class="s2">&lt; X-Rancher-Version: v1.6.17</span>
+<span class="s2">&lt; Transfer-Encoding: chunked</span>
+<span class="s2">&lt;</span>
+<span class="s2">{ [3629 bytes data]</span>
+<span class="s2">100  3617    0  3617    0     0  32881      0 --:--:-- --:--:-- --:--:-- 38478</span>
+<span class="s2">* Connection #0 to host 192.168.99.100 left intact</span>
+<span class="s2">Docker machine &quot;rancher&quot; already exists</span>
+<span class="s2">export DOCKER_TLS_VERIFY=&quot;1&quot;</span>
+<span class="s2">export DOCKER_HOST=&quot;tcp://192.168.99.101:2376&quot;</span>
+<span class="s2">export DOCKER_CERT_PATH=&quot;C:\Users\jlevesque\.docker\machine\machines</span><span class="se">\r</span><span class="s2">ancher&quot;</span>
+<span class="s2">export DOCKER_MACHINE_NAME=&quot;rancher&quot;</span>
+<span class="s2">export COMPOSE_CONVERT_WINDOWS_PATHS=&quot;true&quot;</span>
+<span class="s2"># Run this command to configure your shell:</span>
+<span class="s2"># eval $(&quot;C:\Program Files\Docker Toolbox\docker-machine.exe&quot; env rancher)</span>
+
+<span class="s2">INFO: Running Agent Registration Process, CATTLE_URL=http://192.168.99.100:8080/</span>
+<span class="s2">v1</span>
+<span class="s2">INFO: Attempting to connect to: http://192.168.99.100:8080/v1</span>
+<span class="s2">INFO: http://192.168.99.100:8080/v1 is accessible</span>
+<span class="s2">INFO: Inspecting host capabilities</span>
+<span class="s2">INFO: Boot2Docker: true</span>
+<span class="s2">INFO: Host writable: false</span>
+<span class="s2">INFO: Token: xxxxxxxx</span>
+<span class="s2">INFO: Running registration</span>
+<span class="s2">INFO: Printing Environment</span>
+<span class="s2">INFO: ENV: CATTLE_ACCESS_KEY=50FA9C91251B3B689717</span>
+<span class="s2">INFO: ENV: CATTLE_HOME=/var/lib/cattle</span>
+<span class="s2">INFO: ENV: CATTLE_REGISTRATION_ACCESS_KEY=registrationToken</span>
+<span class="s2">INFO: ENV: CATTLE_REGISTRATION_SECRET_KEY=xxxxxxx</span>
+<span class="s2">INFO: ENV: CATTLE_SECRET_KEY=xxxxxxx</span>
+<span class="s2">INFO: ENV: CATTLE_URL=http://192.168.99.100:8080/v1</span>
+<span class="s2">INFO: ENV: DETECTED_CATTLE_AGENT_IP=192.168.99.101</span>
+<span class="s2">INFO: ENV: RANCHER_AGENT_IMAGE=rancher/agent:stable</span>
+<span class="s2">INFO: Deleting container rancher-agent</span>
+<span class="s2">INFO: Launched Rancher Agent: 8f944921e3462dcf98f4b0a9339d9aa7f35a3751750305ba1e</span>
+<span class="s2">f0105c2a58b71f</span>
+<span class="s2">1st5</span>
+</pre></div>
+</div>
 <p><strong>Note:</strong> when starting the docker terminal, make sure to <cite>Run as administrator</cite>.</p>
 <p>The following <a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/docker-compose.development.yml"><code class="docutils literal notranslate"><span class="pre">docker-compose.development.yml</span></code></a> lines indicate corresponding port forward:</p>
 <div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ports</span><span class="p">:</span>
