@@ -174,7 +174,7 @@ For example, supplying a valid token, to the <code class="docutils literal notra
 
 <span class="c1"># login and get flask-jwt token</span>
 <span class="n">login</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
-    <span class="s1">&#39;https://localhost:9090/login&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;https://192.168.99.101:9090/login&#39;</span><span class="p">,</span>
     <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">},</span>
     <span class="n">data</span><span class="o">=</span><span class="n">payload</span>
 <span class="p">)</span>
@@ -182,7 +182,7 @@ For example, supplying a valid token, to the <code class="docutils literal notra
 
 <span class="c1"># provide flask-jwt token</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
-    <span class="s1">&#39;https://localhost:9090/load-data&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;https://192.168.99.101:9090/load-data&#39;</span><span class="p">,</span>
     <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
         <span class="s1">&#39;Authorization&#39;</span><span class="p">:</span> <span class="s1">&#39;Bearer &#39;</span> <span class="o">+</span> <span class="n">token</span><span class="p">,</span>
         <span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span>
