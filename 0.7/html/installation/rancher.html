@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Data Attributes &mdash; Machine Learning 0.7 documentation</title>
+  <title>Rancher &mdash; Machine Learning 0.7 documentation</title>
   
 
   
@@ -83,11 +83,7 @@
             
               <!-- Local TOC -->
               <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">Data Attributes</a><ul>
-<li><a class="reference internal" href="#main-session">Main Session</a></li>
-<li><a class="reference internal" href="#result-arbiter">Result Arbiter</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#">Rancher</a></li>
 </ul>
 </div>
             
@@ -133,13 +129,13 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-      <li>Data Attributes</li>
+      <li>Rancher</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/html/programmatic-interface/data-attributes.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/html/installation/rancher.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -152,40 +148,81 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="data-attributes">
-<h1>Data Attributes<a class="headerlink" href="#data-attributes" title="Permalink to this headline">¶</a></h1>
-<p>The programmatic-api, is intended to provide many of the functionalities, offered by the
-web-interface. This is done by encoding equivalent attributes, into a json string, and
-sent to its respective url endpoint, as an encapsulated <code class="docutils literal notranslate"><span class="pre">POST</span></code> request. Below, the
-corresponding endpoints are briefly explained, and carefully linked, to further examples
-of its implementation.</p>
-<div class="section" id="main-session">
-<h2>Main Session<a class="headerlink" href="#main-session" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">/load-data</span></code>: interfaces the following main sessions:<ul>
-<li><a class="reference external" href="data/data-new"><code class="docutils literal notranslate"><span class="pre">data_new</span></code></a>: store dataset(s) into the applications database</li>
-<li><a class="reference external" href="data/data-append"><code class="docutils literal notranslate"><span class="pre">data_append</span></code></a>: append additional dataset(s), into an existing dataset entry in the database</li>
-<li><a class="reference external" href="model/model-generate"><code class="docutils literal notranslate"><span class="pre">model_generate</span></code></a>: generate a model, using an existing dataset entry from the database</li>
-<li><a class="reference external" href="predict/model-predict.rst"><code class="docutils literal notranslate"><span class="pre">model_predict</span></code></a>: generate a prediction, using an existing generated model</li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="section" id="result-arbiter">
-<h2>Result Arbiter<a class="headerlink" href="#result-arbiter" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><a class="reference external" href="result/save-prediction"><code class="docutils literal notranslate"><span class="pre">/save-prediction</span></code></a>: store a generated prediction, from a <code class="docutils literal notranslate"><span class="pre">model_predict</span></code> session.</li>
-<li><a class="reference external" href="result/retrieve-prediction"><code class="docutils literal notranslate"><span class="pre">/retrieve-prediction</span></code></a>: retrieves the following saved prediction attributes:<ul>
-<li>result: pertains to all <code class="docutils literal notranslate"><span class="pre">model_type</span></code></li>
-<li>classes: pertains only to the svm <code class="docutils literal notranslate"><span class="pre">model_type</span></code></li>
-<li>decision function: pertains only to the svm <code class="docutils literal notranslate"><span class="pre">model_type</span></code></li>
-<li>probabilities: pertains only to the svm <code class="docutils literal notranslate"><span class="pre">model_type</span></code></li>
-<li>coefficient of determination: pertains only to the svr <code class="docutils literal notranslate"><span class="pre">model_type</span></code></li>
-</ul>
-</li>
-<li><a class="reference external" href="result/retrieve-prediction-titles"><code class="docutils literal notranslate"><span class="pre">/retrieve-prediction-titles</span></code></a>: retrieves predictions saved titles, for either a specified
-<code class="docutils literal notranslate"><span class="pre">model_type</span></code>, otherwise return all saved titles, for all <code class="docutils literal notranslate"><span class="pre">model_type</span></code>.</li>
-</ul>
+  <div class="section" id="rancher">
+<h1>Rancher<a class="headerlink" href="#rancher" title="Permalink to this headline">¶</a></h1>
+<p>The development ecosystem for this application, implements the <a class="reference external" href="http://rancher.com">rancher</a> orchestration.
+This allows various respective docker containers, to be managed in a consistent platform,
+where users can properly manage respective services of this application. However, before
+proceeding, it is important to follow the docker <a class="reference external" href="docker">installation</a> guide, for the corresponding
+host machine.</p>
+<p>Once the docker has been installed, execute the following from the docker quickstart terminal,
+to install [rancher](<a class="reference external" href="https://rancher.com/">https://rancher.com/</a>):</p>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">`</span></a>bash</p>
+<blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><blockquote>
+<div>##         .</div></blockquote>
+<p>## ## ##        ==</p>
+</div></blockquote>
+<p>## ## ## ## ##    ===</p>
+</div></blockquote>
+<p>/”“”“”“”“”“”“”“”“”___/ ===</p>
+</div></blockquote>
+<dl class="docutils">
+<dt>~~~ {~~ ~~~~ ~~~ ~~~~ ~~~ ~ /  ===- ~~~</dt>
+<dd><dl class="first last docutils">
+<dt>______ o           __/</dt>
+<dd><dl class="first last docutils">
+<dt>           __/</dt>
+<dd>___________/</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+<p>docker is configured to use the default machine with IP 192.168.99.100
+For help getting started, check out the docs at <a class="reference external" href="https://docs.docker.com">https://docs.docker.com</a></p>
+<p>Start interactive shell</p>
+<p><a class="reference external" href="mailto:jeff1evesque&#37;&#52;&#48;XXXXXXX">jeff1evesque<span>&#64;</span>XXXXXXX</a> YYYYYZZ ~
+$ cd /path/to/machine-learning</p>
+<p><a class="reference external" href="mailto:jeff1evesque&#37;&#52;&#48;XXXXXXX">jeff1evesque<span>&#64;</span>XXXXXXX</a> YYYYYZZ /path/to/machine-learning (feature-2935)
+$ ./install_rancher
+Unable to find image ‘rancher/server:latest’ locally
+latest: Pulling from rancher/server
+bae382666908: Pull complete
+29ede3c02ff2: Pull complete
+da4e69f33106: Pull complete
+8d43e5f5d27f: Pull complete
+b0de1abb17d6: Pull complete
+422f47db4517: Pull complete
+79d37de643ce: Pull complete
+69d13e08a4fe: Pull complete
+2ddfd3c6a2b7: Pull complete
+bc433fed3823: Pull complete
+b82e188df556: Pull complete
+dae2802428a4: Pull complete
+a6247572ea3c: Pull complete
+884c916ebae4: Pull complete
+85517c9c5365: Pull complete
+02dded9fe690: Pull complete
+fd9f433c3bc6: Pull complete
+44d91b3fea45: Pull complete
+0d463387dfeb: Pull complete
+60753c4d26f0: Pull complete
+a003892966fe: Pull complete
+Digest: sha256:42441f0128fae4d72d51f92de2049392427d462356282a46f28434332967c7e4
+Status: Downloaded newer image for rancher/server:latest
+57e7f8577c7a80d8ea10d1b0855de619c4ec9ad0318172b1f52e70006b99afa6
+<a href="#id5"><span class="problematic" id="id6">``</span></a><a href="#id7"><span class="problematic" id="id8">`</span></a></p>
+<p><strong>Note:</strong> when starting the docker terminal, make sure to <cite>Run as administrator</cite>.</p>
+<p>The following <a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/docker-compose.development.yml"><code class="docutils literal notranslate"><span class="pre">docker-compose.development.yml</span></code></a> lines indicate corresponding port forward:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ports</span><span class="p">:</span>
+  <span class="o">-</span> <span class="s2">&quot;5000:8080&quot;</span>
+  <span class="o">-</span> <span class="s2">&quot;6000:9090&quot;</span>
+</pre></div>
 </div>
 </div>
 
