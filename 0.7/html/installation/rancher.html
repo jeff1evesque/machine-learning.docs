@@ -393,12 +393,12 @@ to install <a class="reference external" href="http://rancher.com">rancher</a>:<
 </pre></div>
 </div>
 <p><strong>Note:</strong> when starting the docker terminal, make sure to <cite>Run as administrator</cite>.</p>
-<p>The following <a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/docker-compose.development.yml"><code class="docutils literal notranslate"><span class="pre">docker-compose.development.yml</span></code></a> lines indicate corresponding port forward:</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ports</span><span class="p">:</span>
-  <span class="o">-</span> <span class="s2">&quot;5000:8080&quot;</span>
-  <span class="o">-</span> <span class="s2">&quot;6000:9090&quot;</span>
-</pre></div>
-</div>
+<p>Once the rancher build succeeds, a single <cite>MLStack</cite> will be created:</p>
+<img alt="https://user-images.githubusercontent.com/2907085/39613056-9cf9289e-4f32-11e8-97ac-608c4bd21672.JPG" src="https://user-images.githubusercontent.com/2907085/39613056-9cf9289e-4f32-11e8-97ac-608c4bd21672.JPG" />
+<p>This stack will contain numerous services, each assigned to it’s respective container:</p>
+<img alt="https://user-images.githubusercontent.com/2907085/39613057-9d06f0aa-4f32-11e8-8fe4-5a9d58d387dd.JPG" src="https://user-images.githubusercontent.com/2907085/39613057-9d06f0aa-4f32-11e8-8fe4-5a9d58d387dd.JPG" />
+<p>Each can be individually inspected. However, the actual application can be accessed:</p>
+<img alt="https://user-images.githubusercontent.com/2907085/39499223-97b96fce-4d7a-11e8-96e2-c4e31f6b8e09.JPG" src="https://user-images.githubusercontent.com/2907085/39499223-97b96fce-4d7a-11e8-96e2-c4e31f6b8e09.JPG" />
 </div>
 
 
