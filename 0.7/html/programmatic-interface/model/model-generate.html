@@ -25,24 +25,17 @@
   
 
   
-  
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="../../../genindex.html"/>
-        <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="Machine Learning 0.7 documentation" href="../../../index.html"/> 
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
 
   
   <script src="../../../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -102,7 +95,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../../index.html">Machine Learning</a>
@@ -110,9 +103,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -156,17 +150,17 @@
             
   <div class="section" id="model-generate">
 <h1>Model Generate<a class="headerlink" href="#model-generate" title="Permalink to this headline">¶</a></h1>
-<p>The <code class="docutils literal"><span class="pre">model_generate</span></code> session, is an implementation that generates a desired model,
-using previously uploaded dataset(s), via either the <code class="docutils literal"><span class="pre">data_new</span></code>, or the <code class="docutils literal"><span class="pre">data_append</span></code>
+<p>The <code class="docutils literal notranslate"><span class="pre">model_generate</span></code> session, is an implementation that generates a desired model,
+using previously uploaded dataset(s), via either the <code class="docutils literal notranslate"><span class="pre">data_new</span></code>, or the <code class="docutils literal notranslate"><span class="pre">data_append</span></code>
 session. The required attributes, for the corresponding session, is sent to the
-<code class="docutils literal"><span class="pre">/load-data</span></code> endpoint, which is demonstrated as follows:</p>
+<code class="docutils literal notranslate"><span class="pre">/load-data</span></code> endpoint, which is demonstrated as follows:</p>
 <ul class="simple">
 <li><a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/interface/static/data/json/programmatic_interface/svm/dataset_url/svm-model-generate.json">svm example</a></li>
 <li><a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/interface/static/data/json/programmatic_interface/svr/dataset_url/svr-model-generate.json">svr example</a></li>
 </ul>
 <p><strong>Note:</strong> the content of each of the above examples, can be substituted for
-the <code class="docutils literal"><span class="pre">data</span></code> attribute, in a given <code class="docutils literal"><span class="pre">POST</span></code> request:</p>
-<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+the <code class="docutils literal notranslate"><span class="pre">data</span></code> attribute, in a given <code class="docutils literal notranslate"><span class="pre">POST</span></code> request:</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">endpoint</span> <span class="o">=</span> <span class="s1">&#39;https://localhost:9090/load-data&#39;</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
@@ -177,33 +171,33 @@ the <code class="docutils literal"><span class="pre">data</span></code> attribut
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">endpoint</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">json_string_here</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>Note:</strong> more information, regarding how to obtain a valid <code class="docutils literal"><span class="pre">token</span></code>, can be further
+<p><strong>Note:</strong> more information, regarding how to obtain a valid <code class="docutils literal notranslate"><span class="pre">token</span></code>, can be further
 reviewed, in the <a class="reference external" href="../authentication/login">documentation</a>.</p>
-<p>The following properties define the above <code class="docutils literal"><span class="pre">data</span></code> attribute:</p>
+<p>The following properties define the above <code class="docutils literal notranslate"><span class="pre">data</span></code> attribute:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">collection</span></code>: collection of dataset documents, used to generate a model</li>
-<li><code class="docutils literal"><span class="pre">session_type</span></code>: corresponds to one of the following session types:<ul>
-<li><code class="docutils literal"><span class="pre">data_new</span></code></li>
-<li><code class="docutils literal"><span class="pre">data_append</span></code></li>
-<li><code class="docutils literal"><span class="pre">model_generate</span></code></li>
-<li><code class="docutils literal"><span class="pre">model_predict</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">collection</span></code>: collection of dataset documents, used to generate a model</li>
+<li><code class="docutils literal notranslate"><span class="pre">session_type</span></code>: corresponds to one of the following session types:<ul>
+<li><code class="docutils literal notranslate"><span class="pre">data_new</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">data_append</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">model_generate</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">model_predict</span></code></li>
 </ul>
 </li>
-<li><code class="docutils literal"><span class="pre">model_type</span></code>: the type of model to perform on:<ul>
-<li><code class="docutils literal"><span class="pre">svm</span></code></li>
-<li><code class="docutils literal"><span class="pre">svr</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">model_type</span></code>: the type of model to perform on:<ul>
+<li><code class="docutils literal notranslate"><span class="pre">svm</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">svr</span></code></li>
 </ul>
 </li>
-<li><code class="docutils literal"><span class="pre">sv_kernel_type</span></code>: the type of kernel to apply to the support vector <code class="docutils literal"><span class="pre">model_type</span></code>:<ul>
-<li><code class="docutils literal"><span class="pre">linear</span></code></li>
-<li><code class="docutils literal"><span class="pre">polynomial</span></code></li>
-<li><code class="docutils literal"><span class="pre">rbf</span></code></li>
-<li><code class="docutils literal"><span class="pre">sigmoid</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">sv_kernel_type</span></code>: the type of kernel to apply to the support vector <code class="docutils literal notranslate"><span class="pre">model_type</span></code>:<ul>
+<li><code class="docutils literal notranslate"><span class="pre">linear</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">polynomial</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">rbf</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">sigmoid</span></code></li>
 </ul>
 </li>
-<li><a class="reference external" href="../model/parameters/penalty"><code class="docutils literal"><span class="pre">penalty</span></code></a>: optional float, of the error term</li>
-<li><a class="reference external" href="..model/parameters/gamma"><code class="docutils literal"><span class="pre">gamma</span></code></a>: optional float, kernel coefficient for <code class="docutils literal"><span class="pre">rbf</span></code>, <code class="docutils literal"><span class="pre">poly</span></code>, and <code class="docutils literal"><span class="pre">sigmoid</span></code><ul>
-<li>if set to <code class="docutils literal"><span class="pre">auto</span></code>, then <code class="docutils literal"><span class="pre">1/n_features</span></code> will be used</li>
+<li><a class="reference external" href="../model/parameters/penalty"><code class="docutils literal notranslate"><span class="pre">penalty</span></code></a>: optional float, of the error term</li>
+<li><a class="reference external" href="..model/parameters/gamma"><code class="docutils literal notranslate"><span class="pre">gamma</span></code></a>: optional float, kernel coefficient for <code class="docutils literal notranslate"><span class="pre">rbf</span></code>, <code class="docutils literal notranslate"><span class="pre">poly</span></code>, and <code class="docutils literal notranslate"><span class="pre">sigmoid</span></code><ul>
+<li>if set to <code class="docutils literal notranslate"><span class="pre">auto</span></code>, then <code class="docutils literal notranslate"><span class="pre">1/n_features</span></code> will be used</li>
 </ul>
 </li>
 </ul>
@@ -211,9 +205,7 @@ reviewed, in the <a class="reference external" href="../authentication/login">do
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -226,7 +218,7 @@ reviewed, in the <a class="reference external" href="../authentication/login">do
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -245,6 +237,7 @@ reviewed, in the <a class="reference external" href="../authentication/login">do
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
             VERSION:'0.7',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -262,14 +255,11 @@ reviewed, in the <a class="reference external" href="../authentication/login">do
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
-  
  
 <script type='text/javascript'>
     var gaJsHost = (('https:' == document.location.protocol) ? 'https://ssl.' : 'http://www.');
