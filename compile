@@ -10,11 +10,11 @@ then
 fi
 
 sudo apt-get update
-sudo apt-get -y install python-pip
-sudo pip install sphinx
-sudo pip install sphinx_rtd_theme
-sudo apt-get -y install subversion
+sudo apt-get -y install python-pip subversion dos2unix
+sudo pip install sphinx sphinx_rtd_theme
 sudo svn export https://github.com/jeff1evesque/machine-learning/trunk/doc source/html
+
+find . -type f -print0 | xargs -0 dos2unix
 
 if [ "$CWD" != 'vagrant' ]
 then

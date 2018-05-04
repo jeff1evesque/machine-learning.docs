@@ -25,24 +25,17 @@
   
 
   
-  
     <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="../../../genindex.html"/>
-        <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="Machine Learning 0.7 documentation" href="../../../index.html"/> 
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
 
   
   <script src="../../../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -102,7 +95,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../../index.html">Machine Learning</a>
@@ -110,9 +103,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -156,15 +150,15 @@
             
   <div class="section" id="save-prediction">
 <h1>Save Prediction<a class="headerlink" href="#save-prediction" title="Permalink to this headline">¶</a></h1>
-<p>The <code class="docutils literal"><span class="pre">save_prediction</span></code> session, is an implementation that saves a supplied prediction
-result, into the applications database, via the <code class="docutils literal"><span class="pre">/save-prediction</span></code> endpoint:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">save_prediction</span></code> session, is an implementation that saves a supplied prediction
+result, into the applications database, via the <code class="docutils literal notranslate"><span class="pre">/save-prediction</span></code> endpoint:</p>
 <ul class="simple">
 <li><a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/interface/static/data/json/programmatic_interface/svm/results/save-prediction.json">svm example</a></li>
 <li><a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/interface/static/data/json/programmatic_interface/svr/results/save-prediction.json">svr example</a></li>
 </ul>
 <p><strong>Note:</strong> the content of each of the above examples, can be substituted for
-the <code class="docutils literal"><span class="pre">data</span></code> attribute, in a given <code class="docutils literal"><span class="pre">POST</span></code> request:</p>
-<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+the <code class="docutils literal notranslate"><span class="pre">data</span></code> attribute, in a given <code class="docutils literal notranslate"><span class="pre">POST</span></code> request:</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">endpoint</span> <span class="o">=</span> <span class="s1">&#39;https://localhost:9090/save-prediction&#39;</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
@@ -175,27 +169,27 @@ the <code class="docutils literal"><span class="pre">data</span></code> attribut
 <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">endpoint</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">json_string_here</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>Note:</strong> more information, regarding how to obtain a valid <code class="docutils literal"><span class="pre">token</span></code>, can be further
-reviewed, in the <code class="docutils literal"><span class="pre">/login</span></code> <a class="reference external" href="../authentication/login">documentation</a>.</p>
-<p>The following properties define the above <code class="docutils literal"><span class="pre">data</span></code> attribute:</p>
+<p><strong>Note:</strong> more information, regarding how to obtain a valid <code class="docutils literal notranslate"><span class="pre">token</span></code>, can be further
+reviewed, in the <code class="docutils literal notranslate"><span class="pre">/login</span></code> <a class="reference external" href="../authentication/login">documentation</a>.</p>
+<p>The following properties define the above <code class="docutils literal notranslate"><span class="pre">data</span></code> attribute:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">status</span></code>: provides the application utilizing this programmatic-api, an additional
+<li><code class="docutils literal notranslate"><span class="pre">status</span></code>: provides the application utilizing this programmatic-api, an additional
 layer to perform conditional sanity checks, before storing the corresponding results:<ul>
-<li><code class="docutils literal"><span class="pre">valid</span></code>: indication to proceed storing result into the database</li>
+<li><code class="docutils literal notranslate"><span class="pre">valid</span></code>: indication to proceed storing result into the database</li>
 </ul>
 </li>
-<li><code class="docutils literal"><span class="pre">model_type</span></code>: corresponds to the desired model type:<ul>
-<li><code class="docutils literal"><span class="pre">svm</span></code>: pertains only to the support vector machine model type</li>
-<li><code class="docutils literal"><span class="pre">svr</span></code>: pertains only to the suppport vector regression model type</li>
+<li><code class="docutils literal notranslate"><span class="pre">model_type</span></code>: corresponds to the desired model type:<ul>
+<li><code class="docutils literal notranslate"><span class="pre">svm</span></code>: pertains only to the support vector machine model type</li>
+<li><code class="docutils literal notranslate"><span class="pre">svr</span></code>: pertains only to the suppport vector regression model type</li>
 </ul>
 </li>
-<li><code class="docutils literal"><span class="pre">title</span></code>: desired name to assign the proposed prediction result.</li>
-<li><code class="docutils literal"><span class="pre">data</span></code>:<ul>
-<li><code class="docutils literal"><span class="pre">result</span></code>: the computed result of the prediction</li>
-<li><code class="docutils literal"><span class="pre">classes</span></code>: applies only to the svm prediction</li>
-<li><code class="docutils literal"><span class="pre">probability</span></code>: applies only to the svm prediction</li>
-<li><code class="docutils literal"><span class="pre">decision_function</span></code>: applies only to the svm prediction</li>
-<li><code class="docutils literal"><span class="pre">r2</span></code>: applies only to the svr prediction</li>
+<li><code class="docutils literal notranslate"><span class="pre">title</span></code>: desired name to assign the proposed prediction result.</li>
+<li><code class="docutils literal notranslate"><span class="pre">data</span></code>:<ul>
+<li><code class="docutils literal notranslate"><span class="pre">result</span></code>: the computed result of the prediction</li>
+<li><code class="docutils literal notranslate"><span class="pre">classes</span></code>: applies only to the svm prediction</li>
+<li><code class="docutils literal notranslate"><span class="pre">probability</span></code>: applies only to the svm prediction</li>
+<li><code class="docutils literal notranslate"><span class="pre">decision_function</span></code>: applies only to the svm prediction</li>
+<li><code class="docutils literal notranslate"><span class="pre">r2</span></code>: applies only to the svr prediction</li>
 </ul>
 </li>
 </ul>
@@ -203,9 +197,7 @@ layer to perform conditional sanity checks, before storing the corresponding res
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -218,7 +210,7 @@ layer to perform conditional sanity checks, before storing the corresponding res
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -237,6 +229,7 @@ layer to perform conditional sanity checks, before storing the corresponding res
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
             VERSION:'0.7',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -254,14 +247,11 @@ layer to perform conditional sanity checks, before storing the corresponding res
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
-  
  
 <script type='text/javascript'>
     var gaJsHost = (('https:' == document.location.protocol) ? 'https://ssl.' : 'http://www.');

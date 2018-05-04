@@ -25,24 +25,17 @@
   
 
   
-  
     <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="../../genindex.html"/>
-        <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="Machine Learning 0.7 documentation" href="../../index.html"/> 
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
    
   <div class="wy-grid-for-nav">
@@ -102,7 +95,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+      <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">Machine Learning</a>
@@ -110,9 +103,10 @@
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
 
@@ -163,18 +157,18 @@ is submitted through a <a class="reference external" href="https://github.com/je
 Essentially, a series of docker containers, connected under a common <a class="reference external" href="https://docs.docker.com/engine/userguide/networking/">docker network</a>,
 are created by the <a class="reference external" href="https://travis-ci.org/jeff1evesque/machine-learning">travis ci</a>:</p>
 <ul class="simple">
-<li><a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/d3ecbd53299d082ceffe77d28875743a923fec1b/test/unit-tests#L47-L50"><code class="docutils literal"><span class="pre">unit-tests#L47-L50</span></code></a></li>
-<li><a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/default.dockerfile"><code class="docutils literal"><span class="pre">default.dockerfile</span></code></a></li>
-<li><a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/database.dockerfile"><code class="docutils literal"><span class="pre">database.dockerfile</span></code></a></li>
-<li><a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/redis.dockerfile"><code class="docutils literal"><span class="pre">redis.dockerfile</span></code></a></li>
-<li><a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/webserver.dockerfile"><code class="docutils literal"><span class="pre">webserver.dockerfile</span></code></a></li>
+<li><a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/d3ecbd53299d082ceffe77d28875743a923fec1b/test/unit-tests#L47-L50"><code class="docutils literal notranslate"><span class="pre">unit-tests#L47-L50</span></code></a></li>
+<li><a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/default.dockerfile"><code class="docutils literal notranslate"><span class="pre">default.dockerfile</span></code></a></li>
+<li><a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/database.dockerfile"><code class="docutils literal notranslate"><span class="pre">database.dockerfile</span></code></a></li>
+<li><a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/redis.dockerfile"><code class="docutils literal notranslate"><span class="pre">redis.dockerfile</span></code></a></li>
+<li><a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/webserver.dockerfile"><code class="docutils literal notranslate"><span class="pre">webserver.dockerfile</span></code></a></li>
 </ul>
 <p>This allows unit tests to cover the following sessions:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">data_new</span></code></li>
-<li><code class="docutils literal"><span class="pre">data_append</span></code></li>
-<li><code class="docutils literal"><span class="pre">model_predict</span></code></li>
-<li><code class="docutils literal"><span class="pre">model_generate</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">data_new</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">data_append</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">model_predict</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">model_generate</span></code></li>
 </ul>
 <p>As well as the following authentication cases:</p>
 <ul class="simple">
@@ -184,9 +178,9 @@ are created by the <a class="reference external" href="https://travis-ci.org/jef
 <li>user logout</li>
 <li>password validation</li>
 </ul>
-<p>However, both the automated, and manual unit tests, implement the same <a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/test/unit-tests"><code class="docutils literal"><span class="pre">unit-tests</span></code></a>
+<p>However, both the automated, and manual unit tests, implement the same <a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/test/unit-tests"><code class="docutils literal notranslate"><span class="pre">unit-tests</span></code></a>
 bash script. Therefore, the manual unit tests can be implemented as follows:</p>
-<div class="code bash highlight-default"><div class="highlight"><pre><span></span>vagrant@trusty64:/vagrant/test$ ./unit-tests
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>vagrant@trusty64:/vagrant/test$ ./unit-tests
 ...
 ============================= test session starts ==============================
 platform linux2 -- Python 2.7.6, pytest-3.0.7, py-1.4.33, pluggy-0.4.0
@@ -299,12 +293,12 @@ will include more granular unit tests, or better logical order, such that partic
 sets of unit tests will conditionally run, upon successful execution of dependencies.</p>
 <p>It is important to understand that building the corresponding docker containers
 needed for the unit tests, is resource intensive, also with respect to the harddisk.
-Therefore, the <a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/test/unit-tests"><code class="docutils literal"><span class="pre">unit-tests</span></code></a> will <a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/d3ecbd53299d082ceffe77d28875743a923fec1b/test/unit-tests#L75-L89">clean-up</a>
+Therefore, the <a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/test/unit-tests"><code class="docutils literal notranslate"><span class="pre">unit-tests</span></code></a> will <a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/d3ecbd53299d082ceffe77d28875743a923fec1b/test/unit-tests#L75-L89">clean-up</a>
 after it’s execution. Additionally, given that the vagrant development environment,
 has not exceeded harddisk limitations, all executions should have necessary space by
-default, from an initial <code class="docutils literal"><span class="pre">vagrant</span> <span class="pre">up</span> <span class="pre">xxx</span></code>. For example, during the execution of the
+default, from an initial <code class="docutils literal notranslate"><span class="pre">vagrant</span> <span class="pre">up</span> <span class="pre">xxx</span></code>. For example, during the execution of the
 <cite>unit-tests</cite> (before clean-up), the harddisk partitions should be as follows:</p>
-<div class="code bash highlight-default"><div class="highlight"><pre><span></span>vagrant@trusty64:/vagrant/test$ df -h
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>vagrant@trusty64:/vagrant/test$ df -h
 Filesystem                                                     Size  Used Avail Use% Mounted on
 udev                                                           486M  4.0K  486M   1% /dev
 tmpfs                                                          100M  644K   99M   1% /run
@@ -320,9 +314,9 @@ tmp_vagrant-puppet_modules-044f8ea6fe024da4abbd7bbb8407a17e    466G  145G  322G 
 tmp_vagrant-puppet_manifests-3def0df79d1c452de6a52de4d163c7cc  466G  145G  322G  31% /tmp/vagrant-puppet/manifests-3def0df79d1c452de6a52de4d163c7cc
 </pre></div>
 </div>
-<p>After the <a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/test/unit-tests"><code class="docutils literal"><span class="pre">unit-tests</span></code></a> successfully executes, the harddisk should be reduced,
+<p>After the <a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/test/unit-tests"><code class="docutils literal notranslate"><span class="pre">unit-tests</span></code></a> successfully executes, the harddisk should be reduced,
 as a part of it’s intrinsic clean-up:</p>
-<div class="code bash highlight-default"><div class="highlight"><pre><span></span>vagrant@trusty64:/vagrant/test$ df -h
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>vagrant@trusty64:/vagrant/test$ df -h
 Filesystem                                                     Size  Used Avail Use% Mounted on
 udev                                                           486M  4.0K  486M   1% /dev
 tmpfs                                                          100M  548K   99M   1% /run
@@ -347,21 +341,19 @@ to build this application:</p>
 <li>network speed</li>
 </ul>
 <p>Then, the unit tests should be re-runnable, meaning multiple successive executions
-of the <a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/test/unit-tests"><code class="docutils literal"><span class="pre">unit-tests</span></code></a> bash script, should run without a problem. More information
+of the <a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/test/unit-tests"><code class="docutils literal notranslate"><span class="pre">unit-tests</span></code></a> bash script, should run without a problem. More information
 regarding <a class="reference external" href="../programmatic-interface/hardware/architecture">hardware architecture</a>,
 and resources can be reviewed to determine the best combination for a given situation.</p>
 <p><strong>Note:</strong> every script within this repository, with the
 <a class="reference external" href="https://github.com/jeff1evesque/machine-learning/issues/2234#issuecomment-158850974">exception</a>
 of puppet (erb) <a class="reference external" href="https://github.com/jeff1evesque/machine-learning/tree/master/puppet/template">templates</a>,
 and a handful of open source libraries, have been <a class="reference external" href="https://en.wikipedia.org/wiki/Lint_%28software%29">linted</a>
-via <a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/.travis.yml"><code class="docutils literal"><span class="pre">.travis.yml</span></code></a></p>
+via <a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/.travis.yml"><code class="docutils literal notranslate"><span class="pre">.travis.yml</span></code></a></p>
 </div>
 
 
            </div>
-           <div class="articleComments">
-            
-           </div>
+           
           </div>
           <footer>
   
@@ -374,7 +366,7 @@ via <a class="reference external" href="https://github.com/jeff1evesque/machine-
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -393,6 +385,7 @@ via <a class="reference external" href="https://github.com/jeff1evesque/machine-
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
             VERSION:'0.7',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
@@ -410,14 +403,11 @@ via <a class="reference external" href="https://github.com/jeff1evesque/machine-
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
   
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
-  
  
 <script type='text/javascript'>
     var gaJsHost = (('https:' == document.location.protocol) ? 'https://ssl.' : 'http://www.');
