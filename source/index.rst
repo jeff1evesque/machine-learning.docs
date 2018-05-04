@@ -29,7 +29,6 @@ Indices and tables
 ==================
 
 * :doc:`html/configuration/setup-clone`
-* :doc:`html/configuration/ssh-keys`
 * :doc:`html/programmatic-interface/data-attributes`
 * :doc:`html/programmatic-interface/authentication/login`
 * :doc:`html/programmatic-interface/data/data-new`
