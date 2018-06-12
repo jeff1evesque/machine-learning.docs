@@ -24,8 +24,7 @@
 
   
 
-  
-    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" /> 
@@ -157,9 +156,11 @@ is submitted through a <a class="reference external" href="https://github.com/je
 Essentially, a series of docker containers, connected under a common <a class="reference external" href="https://docs.docker.com/engine/userguide/networking/">docker network</a>,
 are created by the <a class="reference external" href="https://travis-ci.org/jeff1evesque/machine-learning">travis ci</a>:</p>
 <ul class="simple">
-<li><a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/d3ecbd53299d082ceffe77d28875743a923fec1b/test/unit-tests#L47-L50"><code class="docutils literal notranslate"><span class="pre">unit-tests#L47-L50</span></code></a></li>
+<li><a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/d3ecbd53299d082ceffe77d28875743a923fec1b/test/backend#L47-L50"><code class="docutils literal notranslate"><span class="pre">backend#L47-L50</span></code></a></li>
 <li><a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/default.dockerfile"><code class="docutils literal notranslate"><span class="pre">default.dockerfile</span></code></a></li>
-<li><a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/database.dockerfile"><code class="docutils literal notranslate"><span class="pre">database.dockerfile</span></code></a></li>
+<li><a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/frontend.dockerfile"><code class="docutils literal notranslate"><span class="pre">frontend.dockerfile</span></code></a></li>
+<li><a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/mariadb.dockerfile"><code class="docutils literal notranslate"><span class="pre">mariadb.dockerfile</span></code></a></li>
+<li><a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/mongodb.dockerfile"><code class="docutils literal notranslate"><span class="pre">mongodb.dockerfile</span></code></a></li>
 <li><a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/redis.dockerfile"><code class="docutils literal notranslate"><span class="pre">redis.dockerfile</span></code></a></li>
 <li><a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/webserver.dockerfile"><code class="docutils literal notranslate"><span class="pre">webserver.dockerfile</span></code></a></li>
 </ul>
@@ -178,9 +179,9 @@ are created by the <a class="reference external" href="https://travis-ci.org/jef
 <li>user logout</li>
 <li>password validation</li>
 </ul>
-<p>However, both the automated, and manual unit tests, implement the same <a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/test/unit-tests"><code class="docutils literal notranslate"><span class="pre">unit-tests</span></code></a>
+<p>However, both the automated, and manual unit tests, implement the same <a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/test/backend"><code class="docutils literal notranslate"><span class="pre">backend</span></code></a>
 bash script. Therefore, the manual unit tests can be implemented as follows:</p>
-<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>vagrant@trusty64:/vagrant/test$ ./unit-tests
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>vagrant@trusty64:/vagrant/test$ ./backend
 ...
 ============================= test session starts ==============================
 platform linux2 -- Python 2.7.6, pytest-3.0.7, py-1.4.33, pluggy-0.4.0
@@ -288,16 +289,19 @@ TOTAL                                                                           
 ========================== 21 passed in 52.19 seconds ==========================
 </pre></div>
 </div>
-<p><strong>Note:</strong> future releases (i.e. milestone <a class="reference external" href="https://github.com/jeff1evesque/machine-learning/milestones/1.0">1.0</a>),
-will include more granular unit tests, or better logical order, such that particular
-sets of unit tests will conditionally run, upon successful execution of dependencies.</p>
+<p><strong>Note:</strong> flags can be supplied to the <code class="docutils literal notranslate"><span class="pre">backend</span></code> script, and must be in order:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">--recycle</span></code>, remove containers after test completion</li>
+<li><code class="docutils literal notranslate"><span class="pre">--norecycle</span></code>, can be used in lieu of <code class="docutils literal notranslate"><span class="pre">--recycle</span></code> to allow successive flags to be implemented</li>
+<li><code class="docutils literal notranslate"><span class="pre">--verbose</span></code>, build test containers directly from local dockerfile(s), else pull from dockerhub</li>
+</ul>
 <p>It is important to understand that building the corresponding docker containers
 needed for the unit tests, is resource intensive, also with respect to the harddisk.
-Therefore, the <a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/test/unit-tests"><code class="docutils literal notranslate"><span class="pre">unit-tests</span></code></a> will <a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/d3ecbd53299d082ceffe77d28875743a923fec1b/test/unit-tests#L75-L89">clean-up</a>
+Therefore, the <a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/test/backend"><code class="docutils literal notranslate"><span class="pre">backend</span></code></a> will <a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/d3ecbd53299d082ceffe77d28875743a923fec1b/test/backend#L75-L89">clean-up</a>
 after it’s execution. Additionally, given that the vagrant development environment,
 has not exceeded harddisk limitations, all executions should have necessary space by
 default, from an initial <code class="docutils literal notranslate"><span class="pre">vagrant</span> <span class="pre">up</span> <span class="pre">xxx</span></code>. For example, during the execution of the
-<cite>unit-tests</cite> (before clean-up), the harddisk partitions should be as follows:</p>
+<cite>backend</cite> (before clean-up), the harddisk partitions should be as follows:</p>
 <div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>vagrant@trusty64:/vagrant/test$ df -h
 Filesystem                                                     Size  Used Avail Use% Mounted on
 udev                                                           486M  4.0K  486M   1% /dev
@@ -314,7 +318,7 @@ tmp_vagrant-puppet_modules-044f8ea6fe024da4abbd7bbb8407a17e    466G  145G  322G 
 tmp_vagrant-puppet_manifests-3def0df79d1c452de6a52de4d163c7cc  466G  145G  322G  31% /tmp/vagrant-puppet/manifests-3def0df79d1c452de6a52de4d163c7cc
 </pre></div>
 </div>
-<p>After the <a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/test/unit-tests"><code class="docutils literal notranslate"><span class="pre">unit-tests</span></code></a> successfully executes, the harddisk should be reduced,
+<p>After the <a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/test/backend"><code class="docutils literal notranslate"><span class="pre">backend</span></code></a> successfully executes, the harddisk should be reduced,
 as a part of it’s intrinsic clean-up:</p>
 <div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span>vagrant@trusty64:/vagrant/test$ df -h
 Filesystem                                                     Size  Used Avail Use% Mounted on
@@ -341,7 +345,7 @@ to build this application:</p>
 <li>network speed</li>
 </ul>
 <p>Then, the unit tests should be re-runnable, meaning multiple successive executions
-of the <a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/test/unit-tests"><code class="docutils literal notranslate"><span class="pre">unit-tests</span></code></a> bash script, should run without a problem. More information
+of the <a class="reference external" href="https://github.com/jeff1evesque/machine-learning/blob/master/test/backend"><code class="docutils literal notranslate"><span class="pre">backend</span></code></a> bash script, should run without a problem. More information
 regarding <a class="reference external" href="../programmatic-interface/hardware/architecture">hardware architecture</a>,
 and resources can be reviewed to determine the best combination for a given situation.</p>
 <p><strong>Note:</strong> every script within this repository, with the
@@ -398,10 +402,7 @@ via <a class="reference external" href="https://github.com/jeff1evesque/machine-
 
   
 
-  
-  
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
   <script type="text/javascript">
       jQuery(function () {
