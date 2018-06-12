@@ -31,6 +31,7 @@ Indices and tables
 * :doc:`html/configuration/setup-clone`
 * :doc:`html/installation/dependencies`
 * :doc:`html/installation/rancher`
+* :doc:`html/installation/docker-compose`
 * :doc:`html/programmatic-interface/data-attributes`
 * :doc:`html/programmatic-interface/authentication/login`
 * :doc:`html/programmatic-interface/data/data-new`
@@ -41,3 +42,4 @@ Indices and tables
 * :doc:`html/programmatic-interface/result/retrieve-prediction-titles`
 * :doc:`html/test/lint`
 * :doc:`html/test/pytest`
+* :doc:`html/test/jest`

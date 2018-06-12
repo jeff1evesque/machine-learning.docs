@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Dependencies &mdash; Machine Learning 0.7 documentation</title>
+  <title>Docker Compose &mdash; Machine Learning 0.7 documentation</title>
   
 
   
@@ -82,7 +82,7 @@
             
               <!-- Local TOC -->
               <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">Dependencies</a></li>
+<li><a class="reference internal" href="#">Docker Compose</a></li>
 </ul>
 </div>
             
@@ -128,13 +128,13 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-      <li>Dependencies</li>
+      <li>Docker Compose</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/html/installation/dependencies.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/html/installation/docker-compose.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -147,24 +147,25 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="dependencies">
-<h1>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h1>
-<p>Docker containerization is used to segregate various services required by this application.
-To begin, docker can be installed on the host machine using the following approaches:</p>
-<p><strong>Legacy Windows:</strong>
-The <a class="reference external" href="https://www.virtualbox.org/">virtualbox</a> hypervisor needs to be installed, to facilitate
-the installation, and configuration of docker, for systems that do not meet <a class="reference external" href="https://docs.docker.com/docker-for-windows/">Windows</a>
-minimal system requirements:</p>
-<ul class="simple">
-<li><a class="reference external" href="https://docs.docker.com/toolbox/toolbox_install_windows/">docker toolbox</a></li>
-</ul>
-<p><strong>Community Edition</strong></p>
-<ul class="simple">
-<li><a class="reference external" href="https://docs.docker.com/docker-for-windows/install/#download-docker-for-windows">windows</a></li>
-<li><a class="reference external" href="https://docs.docker.com/install/linux/docker-ce/ubuntu/">ubuntu</a></li>
-<li><a class="reference external" href="https://docs.docker.com/install/linux/docker-ce/centos/">centos</a></li>
-<li><a class="reference external" href="https://docs.docker.com/docker-for-mac/install/">mac</a></li>
-</ul>
+  <div class="section" id="docker-compose">
+<h1>Docker Compose<a class="headerlink" href="#docker-compose" title="Permalink to this headline">¶</a></h1>
+<p>The development ecosystem for this application, can be run via <a class="reference external" href="https://docs.docker.com/compose/install/#install-compose">docker-compose</a>.
+This allows various respective docker containers, to be managed consistently.
+However, before proceeding, it is important to follow the <a class="reference external" href="https://docs.docker.com/install/">docker</a> , and
+<a class="reference external" href="https://docs.docker.com/compose/install/#install-compose">docker-compose</a> installation guide.</p>
+<p>Once docker-compose has installed, simply run <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">up</span></code>:</p>
+<div class="code bash highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">machine</span><span class="o">-</span><span class="n">learning</span>
+<span class="n">docker</span><span class="o">-</span><span class="n">compose</span> <span class="n">up</span>
+</pre></div>
+</div>
+<p>This will allow the web-application to
+be accessible on the host machine, via <a class="reference external" href="https://localhost:8080">https://localhost:8080</a>. Similarly, the
+programmatic-api will be accessible at <a class="reference external" href="https://localhost:9090">https://localhost:9090</a>. However, since
+this project assumes rancher as the primary method to deploy, and run the
+application, it will be important to remember when reading through this
+documentation, to substitute the localhost, or the <cite>https://127.0.0.1:XXXX</cite>
+address, in place of the <cite>https://192.168.99.101:XXXX</cite> endpoint. This will
+allow users to perform the same tasks outlined throughout this documentation.</p>
 </div>
 
 
